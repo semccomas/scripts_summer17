@@ -1,8 +1,8 @@
 ## this file will compare the output from the dendoscope where we got only the sodium or calcium channels to the fasta file. We will find the matching labels and make a new fasta file with only sodium or only calcium channels
 
-#sodium = open('../Marina_USB/seqs/trees/sodium_only.nexml').read().splitlines()
-sodium = open('../Marina_USB/seqs/trees/calcium_only_total.nexml').read().splitlines()
-fasta = open('../Marina_USB/seqs/nogaps_iter2.final.fa').read()
+sodium = open('../Marina_USB/seqs/trees/sodium_only.nexml').read().splitlines()
+#sodium = open('../Marina_USB/seqs/trees/calcium_only_total.nexml').read().splitlines()
+fasta = open('../Marina_USB/seqs/arthropoda_in_fasta_file.txt').read()
 
 label = [] 
 for line in sodium:
@@ -29,7 +29,7 @@ for line in fasta_splitline:
 
 
 f_splitentry = fasta.split('>')   # I do this because the alignments often took longer than one line, so this keeps the alignment in one piece with the text entry 
-o = open('../Marina_USB/seqs/calcium_fasta_only.fa', 'w')
+o = open('../Marina_USB/seqs/arthropoda_sodium_only_in_fasta_file.fa', 'w')
 
 m = 0
 for line in label:
